@@ -41,8 +41,8 @@
 
       <div class="flex items-center gap-4">
         <button id="cart-btn" class="relative p-2 rounded-full text-white hover:bg-black/20 transition">
-          <i data-lucide="shopping-bag"></i>
-          <span id="cart-count" class="hidden absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center"></span>
+          <img src="images/bg_keranjang.png" alt="Keranjang" class="w-20 h-20" style="filter: invert(1);">
+          <span id="cart-count" class="hidden absolute top-6 right-6 bg-red-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center"></span>
         </button>
 
         <button id="mobile-menu-toggle" class="md:hidden text-white">
@@ -263,7 +263,7 @@
           <span id="cart-total">Rp 0</span>
         </div>
         <button id="checkout-btn" class="w-full bg-[#25D366] text-white py-3 rounded-lg font-bold hover:bg-[#128C7E] transition shadow-lg flex justify-center items-center gap-2">
-          <i data-lucide="phone"></i> Checkout via WhatsApp
+          <i data-lucide="phone"></i> Pesan Sekarang
         </button>
       </div>
     </div>
@@ -439,8 +439,8 @@
 
     checkoutBtn?.addEventListener('click', () => {
       const totalPrice = cart.reduce((sum, it) => sum + it.price * it.quantity, 0);
-      const text = `Pesanan: ${cart.map(i => i.name + ' x' + i.quantity).join(', ')}. Total: Rp ${totalPrice.toLocaleString('id-ID')}`;
-      alert('Checkout via WhatsApp (demo). ' + text);
+      const text = `Pesanan Anda: ${cart.map(i => i.name + ' x' + i.quantity).join(', ')}. Total: Rp ${totalPrice.toLocaleString('id-ID')}`;
+      alert('Pesanan Berhasil! Terima Kasih.' + text);
     });
 
     feedbackForm?.addEventListener('submit', (e) => { e.preventDefault(); alert('Terima kasih atas masukan Anda!'); feedbackForm.reset(); });
