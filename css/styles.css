@@ -19,9 +19,7 @@ html,body { height: 100%; margin: 0; padding: 0; }
 img { display: block; max-width: 100%; height: auto; }
 .object-cover { object-fit: cover; }
 
-/* Fixed vs absolute backgrounds
-   Use .bg-fixed when you want the background fixed to viewport.
-   Default in the provided HTML uses absolute backgrounds for better stacking control. */
+/* Fixed vs absolute backgrounds */
 .bg-fixed { background-attachment: fixed; }
 
 /* Simple responsive height helpers */
@@ -37,43 +35,43 @@ nav { transition: background-color .25s ease, padding .25s ease, box-shadow .25s
 
 /* Small badge for cart count */
 .cart-badge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  background: #ef4444; /* red-500 */
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: #ef4444; /* red-500 */
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Buttons fallback styling */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  border: 0;
-  cursor: pointer;
-  border-radius: 999px;
-  padding: .75rem 1.5rem;
-  font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: .75rem 1.5rem;
+    font-weight: 700;
 }
 
 /* Form inputs fallback */
 .input, textarea {
-  width: 100%;
-  padding: .75rem;
-  border-radius: .5rem;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  outline: none;
+    width: 100%;
+    padding: .75rem;
+    border-radius: .5rem;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    outline: none;
 }
 .input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.5); }
 
@@ -82,21 +80,21 @@ nav { transition: background-color .25s ease, padding .25s ease, box-shadow .25s
 
 /* Animations */
 @keyframes slide-in-right {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 .animate-slide-in-right { animation: slide-in-right 0.35s cubic-bezier(.2,.9,.2,1) both; }
 
 @keyframes fade-in-down {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-in-down { animation: fade-in-down 0.25s ease-out both; }
 
 /* Scrollbar styling for cart list */
 .cart-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0,0,0,0.2) transparent;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.2) transparent;
 }
 .cart-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
 .cart-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 999px; }
@@ -106,19 +104,26 @@ nav { transition: background-color .25s ease, padding .25s ease, box-shadow .25s
 
 /* Small responsive tweaks */
 @media (max-width: 768px) {
-  .h-64 { height: 14rem; }
-  .h-80 { height: 18rem; }
-  .container { padding-left: .75rem; padding-right: .75rem; }
+    .h-64 { height: 14rem; }
+    .h-80 { height: 18rem; }
+    .container { padding-left: .75rem; padding-right: .75rem; }
 }
 
 /* Optional: light overlay for text blocks to improve contrast */
 .text-block-overlay {
-  background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.28) 100%);
-  padding: 1rem;
-  border-radius: .75rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.28) 100%);
+    padding: 1rem;
+    border-radius: .75rem;
 }
 
 /* Small helper to ensure fixed backgrounds don't cover content stacking */
 .bg-layer { position: absolute; inset: 0; z-index: 0; }
 .overlay-layer { position: absolute; inset: 0; z-index: 5; }
 .content-layer { position: relative; z-index: 10; }
+
+/* FIX: Memastikan Ikon Lucide (termasuk ikon keranjang) memiliki dimensi yang terlihat */
+i[data-lucide] {
+    display: block; 
+    width: 24px;
+    height: 24px;
+}
